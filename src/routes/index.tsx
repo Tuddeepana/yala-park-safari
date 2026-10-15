@@ -14,6 +14,7 @@ import { media, jeepPhotos, jeepFeatures, guestPhotos } from "@/data/media";
 import { about, benefits, reviews, faqs } from "@/data/content";
 import { siteConfig, whatsappReady, whatsappUrl } from "@/data/site-config";
 import { allHomepageSchemas } from "@/data/seo-schemas";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 const TITLE = "Yala Safari Sri Lanka | Private & Shared | Yala Park Safari";
 const DESC =
@@ -304,7 +305,9 @@ function Index() {
               Ask us about safari options, timings, pickup or group bookings larger than {JEEP_CAPACITY} guests.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button variant="whatsapp" size="lg" onClick={openWhatsapp}><MessageCircle /> Message us on WhatsApp</Button>
+              <Button variant="whatsapp" size="lg" onClick={openWhatsapp}>
+                <WhatsAppIcon className="h-5 w-5" /> Message us on WhatsApp
+              </Button>
             </div>
             <ul className="mt-6 space-y-2 text-sm">
               <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" />{siteConfig.location}</li>
@@ -356,9 +359,9 @@ function Index() {
       <button
         onClick={openWhatsapp}
         aria-label="Chat with Yala Park Safari on WhatsApp"
-        className="fixed bottom-5 right-5 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-primary-foreground shadow-[var(--shadow-card)]"
+        className="fixed bottom-5 right-5 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-primary-foreground shadow-[var(--shadow-card)] transition-transform hover:scale-110 active:scale-95"
       >
-        <MessageCircle className="h-7 w-7" />
+        <WhatsAppIcon className="h-7 w-7" />
       </button>
       <EnquiryPreview message={preview} onClose={() => setPreview(null)} copied={copied} setCopied={setCopied} />
     </>

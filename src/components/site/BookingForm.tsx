@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { Copy, Check, MessageCircle } from "lucide-react";
+import { Copy, Check } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -288,7 +289,7 @@ export function BookingForm({
         </div>
 
         <Button type="submit" variant="whatsapp" size="lg" className="h-12 w-full text-base">
-          <MessageCircle /> Book via WhatsApp
+          <WhatsAppIcon className="h-5 w-5" /> Book via WhatsApp
         </Button>
         <p className="text-center text-xs text-muted-foreground">
           Send your request to check availability. Your booking is confirmed after our team replies.
