@@ -13,6 +13,7 @@ import { safaris, basisLabel, JEEP_CAPACITY, type SafariId } from "@/data/safari
 import { media, jeepPhotos, jeepFeatures, guestPhotos } from "@/data/media";
 import { about, benefits, reviews, faqs } from "@/data/content";
 import { siteConfig, whatsappReady, whatsappUrl } from "@/data/site-config";
+import { allHomepageSchemas } from "@/data/seo-schemas";
 
 const TITLE = "Yala Safari Sri Lanka | Private & Shared | Yala Park Safari";
 const DESC =
@@ -23,26 +24,28 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
+      /* ─── SEO: Keyword targeting ─── */
+      {
+        name: "keywords",
+        content:
+          "yala safari, yala national park safari, yala jeep safari, private safari yala, shared safari yala, yala park safari, book yala safari, yala safari price, yala safari booking, yala wildlife safari, sri lanka safari, yala leopard safari, half day safari yala, full day safari yala, yala safari tour, yala safari packages, best yala safari, yala national park tour, cheap yala safari, yala safari online booking",
+      },
+      /* ─── Open Graph (page-specific) ─── */
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { property: "og:url", content: siteConfig.domain },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "robots", content: siteConfig.demoMode ? "noindex, nofollow" : "index, follow" },
+      /* ─── Twitter (page-specific) ─── */
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESC },
+      /* ─── Robots ─── */
+      { name: "robots", content: siteConfig.demoMode ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
     ],
     links: [{ rel: "canonical", href: siteConfig.domain + "/" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "TravelAgency",
-          name: siteConfig.name,
-          url: siteConfig.domain,
-          areaServed: "Yala National Park, Sri Lanka",
-        }),
-      },
-    ],
+    scripts: allHomepageSchemas().map((schema) => ({
+      type: "application/ld+json",
+      children: JSON.stringify(schema),
+    })),
   }),
   component: Index,
 });

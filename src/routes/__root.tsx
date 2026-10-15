@@ -79,10 +79,39 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Yala Park Safari" },
-      { name: "description", content: "Private and shared jeep safaris in Yala National Park, Sri Lanka." },
+      { name: "description", content: "Private and shared jeep safaris in Yala National Park, Sri Lanka. Book full-day, half-day, or shared jeep safaris directly via WhatsApp." },
+
+      /* ─── SEO: Authorship & identity ─── */
+      { name: "author", content: "Yala Park Safari" },
+      { name: "publisher", content: "Yala Park Safari" },
+      { name: "application-name", content: "Yala Park Safari" },
+
+      /* ─── SEO: Geo targeting (Sri Lanka / Yala) ─── */
+      { name: "geo.region", content: "LK" },
+      { name: "geo.placename", content: "Yala National Park, Sri Lanka" },
+      { name: "geo.position", content: "6.3692;81.5165" },
+      { name: "ICBM", content: "6.3692, 81.5165" },
+
+      /* ─── SEO: Theme & mobile ─── */
+      { name: "theme-color", content: "#2d5016" },
+      { name: "color-scheme", content: "light" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-title", content: "Yala Park Safari" },
+
+      /* ─── Open Graph defaults (pages override title/desc) ─── */
       { property: "og:site_name", content: "Yala Park Safari" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:image", content: "https://yalaparksafari.com/yala_park_safari.png" },
+      { property: "og:image:width", content: "512" },
+      { property: "og:image:height", content: "512" },
+      { property: "og:image:alt", content: "Yala Park Safari – Private and Shared Jeep Safaris in Yala National Park" },
+
+      /* ─── Twitter / X card defaults ─── */
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://yalaparksafari.com/yala_park_safari.png" },
+      { name: "twitter:image:alt", content: "Yala Park Safari – Private and Shared Jeep Safaris in Yala National Park" },
     ],
     links: [
       {
@@ -95,7 +124,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Karla:wght@400;500;700&display=swap",
       },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "icon", href: "/yala_park_safari.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/yala_park_safari.png" },
+      { rel: "manifest", href: "/manifest.json" },
+      { rel: "author", href: "/humans.txt" },
     ],
   }),
   shellComponent: RootShell,

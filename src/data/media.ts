@@ -6,11 +6,10 @@ import jeepSeating from "@/assets/jeep-seating.jpg";
 import jeepExterior from "@/assets/jeep-exterior.jpg";
 import openViewing from "@/assets/open-viewing.jpg";
 import slothBear from "@/assets/sloth-bear.jpg";
-import logo from "@/assets/logo-mark.png";
 
 /** Replace images here. `sample: true` marks placeholder photos (labelled in demo, hidden in production for guest photos). */
 export const media = {
-  logo: { src: logo, alt: "Yala Park Safari leopard logo" },
+  logo: { src: "/yala_park_safari.png", alt: "Yala Park Safari logo" },
   hero: { src: hero, alt: "Sri Lankan leopard resting on a granite rock in Yala National Park at sunset" },
   elephants: { src: elephants, alt: "Sri Lankan elephants grazing beside a lagoon in Yala at dusk" },
   peacock: { src: peacock, alt: "Peacock displaying its feathers on a Yala safari track" },

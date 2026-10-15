@@ -1,0 +1,10 @@
+/* TEAM */
+Name: Yala Park Safari
+Location: Yala National Park area, Sri Lanka
+Contact: https://yalaparksafari.com/#contact
+
+/* SITE */
+Last update: 2026-10-16
+Standards: HTML5, CSS3, ECMAScript 2023
+Framework: React (TanStack Start)
+Hosting: Cloudflare

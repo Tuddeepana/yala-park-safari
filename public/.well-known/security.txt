@@ -1,0 +1,6 @@
+# Yala Park Safari Security Contact
+# https://securitytxt.org/
+
+Contact: https://yalaparksafari.com/#contact
+Preferred-Languages: en
+Canonical: https://yalaparksafari.com/.well-known/security.txt
