@@ -40,7 +40,7 @@ export function localBusinessSchema() {
       name: "Yala National Park, Sri Lanka",
     },
     priceRange: "$$",
-    currenciesAccepted: "USD",
+    currenciesAccepted: "LKR, USD, EUR",
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [

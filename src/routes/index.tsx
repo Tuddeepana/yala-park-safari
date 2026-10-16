@@ -9,7 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { BookingForm, EnquiryPreview } from "@/components/site/BookingForm";
-import { safaris, basisLabel, JEEP_CAPACITY, type SafariId } from "@/data/safaris";
+import { safaris, basisLabel, formatLkr, JEEP_CAPACITY, type SafariId } from "@/data/safaris";
 import { media, jeepPhotos, jeepFeatures, guestPhotos } from "@/data/media";
 import { about, benefits, reviews, faqs } from "@/data/content";
 import { siteConfig, whatsappReady, whatsappUrl } from "@/data/site-config";
@@ -142,7 +142,7 @@ function Index() {
             className="absolute inset-0 -z-10 h-full w-full object-cover"
           />
           <div className="absolute inset-0 -z-10 bg-overlay" />
-          <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 lg:grid-cols-[1fr_440px] lg:py-20">
+          <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 lg:grid-cols-[1fr_520px] lg:py-20">
             <div className="text-primary-foreground">
               <p className="eyebrow">Yala National Park · Sri Lanka</p>
               <h1 className="mt-3 text-4xl leading-tight text-primary-foreground sm:text-5xl lg:text-6xl">
@@ -174,15 +174,26 @@ function Index() {
               <article key={s.id} className="flex flex-col overflow-hidden rounded-xl bg-card shadow-[var(--shadow-card)]">
                 <img src={s.image.src} alt={s.image.alt} width={1200} height={912} loading="lazy" className="aspect-[4/3] w-full object-cover" />
                 <div className="flex flex-1 flex-col p-6">
-                  <span className="demo-badge self-start">{s.type}</span>
+                  <div className="flex items-center justify-between">
+                    <span className="demo-badge self-start">{s.type}</span>
+                    <span className="text-xs font-semibold text-muted-foreground">⏱️ {s.durationLabel}</span>
+                  </div>
                   <h3 className="mt-3 text-2xl">{s.name}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{s.description}</p>
-                  <p className="mt-4">
-                    <span className="font-display text-3xl text-primary">USD {s.price}</span>{" "}
-                    <span className="text-sm text-muted-foreground">{basisLabel(s.basis)}</span>
-                    {siteConfig.demoMode && <span className="ml-2 text-xs text-accent">Sample price</span>}
-                  </p>
-                  <ul className="mt-4 space-y-1 text-sm">
+                  
+                  <div className="mt-4 rounded-lg bg-muted/50 p-3.5 border border-border/70">
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-xs uppercase font-bold text-muted-foreground">From</span>
+                      <span className="font-display text-2xl font-bold text-primary">{formatLkr(s.price)}</span>
+                      <span className="text-xs text-muted-foreground">/ {s.basis === "per-jeep" ? "jeep" : "seat"}</span>
+                    </div>
+                    <div className="mt-1 flex items-center justify-between text-xs text-muted-foreground">
+                      <span className="font-semibold text-accent">≈ ${s.priceUsd} USD</span>
+                      <span className="truncate max-w-[150px]">{s.timingLabel}</span>
+                    </div>
+                  </div>
+
+                  <ul className="mt-4 space-y-1.5 text-sm">
                     {s.inclusions.map((i) => (
                       <li key={i} className="flex gap-2"><Check className="h-4 w-4 shrink-0 text-accent" />{i}</li>
                     ))}

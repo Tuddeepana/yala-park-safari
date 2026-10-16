@@ -23,7 +23,12 @@ export const jeepPhotos = [
   { src: jeepSetting, alt: "Safari jeep driving through Yala's dry-zone landscape", caption: "On the trail in Yala", sample: true },
 ];
 
-export const jeepFeatures = ["Open-sided viewing", "Raised seating", "Canvas sun roof"];
+export const jeepFeatures = [
+  "Luxury & Super Luxury options",
+  "Open-sided 360° viewing",
+  "Raised tiered seating",
+  "Canvas sun roof & USB charging",
+];
 
 export const guestPhotos = [
   { src: openViewing, alt: "Travellers watching elephants from a jeep", sample: true },

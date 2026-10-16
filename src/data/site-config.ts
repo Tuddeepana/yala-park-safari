@@ -14,7 +14,7 @@ export const siteConfig = {
   email: "",
   location: "Yala National Park area, Sri Lanka",
   timezone: "Asia/Colombo",
-  currency: "USD",
+  currency: "LKR",
 };
 
 export const isValidWhatsapp = (n: string) => /^\d{8,15}$/.test(n);
