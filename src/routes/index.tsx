@@ -142,13 +142,13 @@ function Index() {
             className="absolute inset-0 -z-10 h-full w-full object-cover"
           />
           <div className="absolute inset-0 -z-10 bg-overlay" />
-          <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 lg:grid-cols-[1fr_520px] lg:py-20">
+          <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-8 sm:py-12 lg:grid-cols-[1fr_580px] xl:grid-cols-[1fr_620px] lg:py-16">
             <div className="text-primary-foreground">
               <p className="eyebrow">Yala National Park · Sri Lanka</p>
-              <h1 className="mt-3 text-4xl leading-tight text-primary-foreground sm:text-5xl lg:text-6xl">
+              <h1 className="mt-3 text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight text-primary-foreground">
                 Your Yala Safari Starts Here
               </h1>
-              <p className="mt-4 max-w-lg text-lg text-primary-foreground/90">
+              <p className="mt-3 sm:mt-4 max-w-lg text-base sm:text-lg text-primary-foreground/90">
                 Explore Yala National Park, Sri Lanka, with a private or shared jeep safari. Choose your
                 experience and plan your visit directly with our team.
               </p>
@@ -158,7 +158,11 @@ function Index() {
                 </Button>
               </div>
             </div>
-            <BookingForm selected={selected} onSelect={setSelected} />
+            <div className="w-full flex justify-center lg:justify-end">
+              <div className="w-full max-w-[620px] lg:max-w-none">
+                <BookingForm selected={selected} onSelect={setSelected} />
+              </div>
+            </div>
           </div>
         </section>
 

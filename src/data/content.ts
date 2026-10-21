@@ -34,7 +34,7 @@ export const faqs = [
   },
   {
     q: "Can I add meals and refreshments to my safari?",
-    a: "Yes! You can add packed safari breakfast (Rs. 700 / person), authentic Sri Lankan traditional village rice & curry lunch wrapped in banana leaves (Rs. 850 / person for full day), fresh tropical fruit dessert platters (Rs. 1,200), and chilled mineral water bottles directly in the booking form.",
+    a: "Yes! You can add our packed safari breakfast & chilled water pack (Rs. 820 / person for half-day) or our complete full-day meal pack with breakfast, authentic Sri Lankan rice & curry lunch wrapped in banana leaves, fresh fruit, and chilled water (Rs. 2,000 / person) directly in the booking form.",
   },
   {
     q: "How does a shared safari work?",
